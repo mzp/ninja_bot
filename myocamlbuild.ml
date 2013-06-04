@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 014145afc30fb3c8b62110038caa3fcb) *)
+(* DO NOT EDIT (digest: dad14d6e7598b2884fe6c8e98e8d2845) *)
 module OASISGettext = struct
 (* # 21 "/home/mzp/.opam/system/build/oasis.0.3.0/src/oasis/OASISGettext.ml" *)
 
@@ -476,11 +476,48 @@ end
 # 476 "myocamlbuild.ml"
 open Ocamlbuild_plugin;;
 let package_default =
-  {MyOCamlbuildBase.lib_ocaml = []; lib_c = []; flags = []; includes = []; }
+  {
+     MyOCamlbuildBase.lib_ocaml = [];
+     lib_c = [];
+     flags =
+       [
+          (["oasis_executable_ninja_byte"; "ocaml"; "link"; "byte"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ]);
+          (["oasis_executable_ninja_native"; "ocaml"; "link"; "native"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ]);
+          (["oasis_executable_ninja_byte"; "ocaml"; "ocamldep"; "byte"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ]);
+          (["oasis_executable_ninja_native"; "ocaml"; "ocamldep"; "native"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ]);
+          (["oasis_executable_ninja_byte"; "ocaml"; "compile"; "byte"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ]);
+          (["oasis_executable_ninja_native"; "ocaml"; "compile"; "native"],
+            [
+               (OASISExpr.EBool true,
+                 S [A "-w"; A "+a"; A "-warn-error"; A "+a"; A "-annot"])
+            ])
+       ];
+     includes = [];
+     }
   ;;
 
 let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 
-# 485 "myocamlbuild.ml"
+# 522 "myocamlbuild.ml"
 (* OASIS_STOP *)
 Ocamlbuild_plugin.dispatch dispatch_default;;

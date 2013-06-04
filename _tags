@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 18366823373d126dece6761ba3af1369)
+# DO NOT EDIT (digest: 66b2498452fb4498ff60197dd6204048)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -14,6 +14,17 @@
 "_darcs": -traverse
 "_darcs": not_hygienic
 # Executable ninja
-"src/main.byte": pkg_ocamltter
-<src/*.ml{,i}>: pkg_ocamltter
+"src/ninja.byte": oasis_executable_ninja_byte
+<src/*.ml{,i}>: oasis_executable_ninja_byte
+"src/ninja.byte": oasis_executable_ninja_native
+<src/*.ml{,i}>: oasis_executable_ninja_native
+"src/ninja.byte": pkg_twitter
+"src/ninja.byte": pkg_meta_conv.syntax
+"src/ninja.byte": pkg_ocaml_conv
+"src/ninja.byte": pkg_camlp4
+<src/*.ml{,i}>: pkg_twitter
+<src/*.ml{,i}>: pkg_meta_conv.syntax
+<src/*.ml{,i}>: pkg_ocaml_conv
+<src/*.ml{,i}>: pkg_camlp4
 # OASIS_STOP
+<src/*.ml{,i}>: syntax_camlp4o

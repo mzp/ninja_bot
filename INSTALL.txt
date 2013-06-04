@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 27bba73de4434c4f8c171cc41a1e4bfc) *)
+(* DO NOT EDIT (digest: 6312532ff60b3936972842846ba7946f) *)
 This is the INSTALL file for the ninja_bot distribution.
 
 This package uses OASIS to generate its build system. See section OASIS for
@@ -11,7 +11,9 @@ Dependencies
 In order to compile this package, you will need:
 * ocaml
 * findlib
-* ocamltter
+* twitter
+* meta_conv
+* ocaml_conv
 
 Installing
 ==========
