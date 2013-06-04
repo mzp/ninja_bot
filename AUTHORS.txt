@@ -1,0 +1,5 @@
+(* OASIS_START *)
+(* DO NOT EDIT (digest: 880e53b810bfa4893d3c37389df47857) *)
+Authors of ninja_bot
+mzp
+(* OASIS_STOP *)
