@@ -8,5 +8,8 @@ let ()  =
   +> (function
     | `Ok s  -> s#statuses
     | `Error _ -> failwith "error")
-  +> List.map (fun x -> x#text)
-  +> List.iter print_endline
+  +> List.filter (fun x ->  x#retweeted_status = None)
+  +> List.map (fun x -> print_endline x#text; x)
+  +> List.map (fun x -> x#id)
+  +> List.map (Twitter.Api11.Favorites.create o)
+  +> ignore
