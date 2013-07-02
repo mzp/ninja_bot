@@ -1,15 +1,15 @@
-let (+>) x f = f x
+open Base
 
-let o =
-  MinOCamltter.get_oauth ()
+let run () =
+  let t =
+    Bot.init ()
+  in
+  Bot.search "#functionalNinja" t
+  +> List.iter (flip Bot.fav t)
 
-let ()  =
-  Twitter.Api11.Search.tweets o ~count:100 "#functionalNinja"
-  +> (function
-    | `Ok s  -> s#statuses
-    | `Error _ -> failwith "error")
-  +> List.filter (fun x ->  x#retweeted_status = None)
-  +> List.map (fun x -> print_endline x#text; x)
-  +> List.map (fun x -> x#id)
-  +> List.map (Twitter.Api11.Favorites.create o)
-  +> ignore
+let () =
+  while true do
+    print_endline "wakeup";
+    run ();
+    Unix.sleep 60
+  done

@@ -1,0 +1,5 @@
+#require "twitter";;
+#directory "_build/src";;
+#load "base.cmo";;
+#load "minOCamltter.cmo";;
+#load "bot.cmo";;
